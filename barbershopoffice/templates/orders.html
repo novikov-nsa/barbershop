@@ -4,7 +4,7 @@
         {% for orders in latest_order %}
             <li>
 
-                    {{ orders.numberOrder }}
+                    Заказ № {{ orders.numberOrder }} от {{orders.dateOrder }}, клиент: {{ orders.client.nameClient }}
 
             </li>
         {% endfor %}

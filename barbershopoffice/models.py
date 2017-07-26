@@ -8,7 +8,7 @@ class DictServices(models.Model):
 
 class DictClients(models.Model):
     codeClient = models.CharField(max_length=20)
-    nameCleint = models.CharField(max_length=255)
+    nameClient = models.CharField(max_length=255)
 
 
 class Orders(models.Model):
