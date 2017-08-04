@@ -6,6 +6,16 @@ from django.template import RequestContext, loader
 from .models import Orders, OrdersDetail, DictServices, DictClients
 
 # Create your views here.
+def main_app(request):
+    return render(request, 'index.html')
+
+def dicts(request):
+    return render(request, 'dicts/index.html')
+
+def dict_services_list(request):
+    latest_dicts_services = DictServices.objects.order_by('-codeService')[:5]
+    context = {'latest_dicts_services': latest_dicts_services}
+    return render(request, 'dicts/services.html', context)
 
 def orders(request):
     latest_order = Orders.objects.order_by('-numberOrder')[:5]
