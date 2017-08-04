@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'dicts/$', views.dicts, name='dicts'),
     url(r'dicts/services/$', views.dict_services_list, name='dict_services_list'),
     url(r'dicts/clients/$', views.dict_clients_list, name='dict_clients_list'),
+    url(r'dicts/clients/(?P<client_id>[0-9]+)/detail$', views.dict_clients_detail, name='dict_clients_detail'),
 ]

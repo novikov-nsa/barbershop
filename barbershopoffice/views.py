@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http.response import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.template import RequestContext, loader
+from django.http import Http404
 
 from .models import Orders, OrdersDetail, DictServices, DictClients
 
@@ -21,6 +22,13 @@ def dict_clients_list(request):
     latest_dicts_clients = DictClients.objects.order_by('-codeClient')[:5]
     context = {'latest_dicts_clients': latest_dicts_clients}
     return render(request, 'dicts/clients.html', context)
+
+def dict_clients_detail(request, client_id):
+    try:
+        client = DictClients.objects.get(pk=client_id)
+    except DictClients.DoesNotExist:
+        raise Http404("Запись справочника Клиенты не найдена")
+    return render(request,'dicts/clients_detail.html', {'client': client})
 
 def orders(request):
     latest_order = Orders.objects.order_by('-numberOrder')[:5]
