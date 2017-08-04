@@ -1,0 +1,12 @@
+<h1>Услуги</h1>
+<a href = "{% url 'dicts' %}">Назад в справочники</a>
+<ul>
+        {% for dict_clients_list in latest_dicts_clients %}
+            <li>
+
+                    {{ dict_clients_list.codeClient }} {{ dict_clients_list.nameClient }}
+
+            </li>
+        {% endfor %}
+
+</ul>

@@ -17,6 +17,11 @@ def dict_services_list(request):
     context = {'latest_dicts_services': latest_dicts_services}
     return render(request, 'dicts/services.html', context)
 
+def dict_clients_list(request):
+    latest_dicts_clients = DictClients.objects.order_by('-codeClient')[:5]
+    context = {'latest_dicts_clients': latest_dicts_clients}
+    return render(request, 'dicts/clients.html', context)
+
 def orders(request):
     latest_order = Orders.objects.order_by('-numberOrder')[:5]
     context = {'latest_order': latest_order}
