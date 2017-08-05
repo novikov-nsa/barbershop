@@ -4,7 +4,7 @@
         {% for dict_clients_list in latest_dicts_clients %}
             <li>
 
-                <a href =""> {{ dict_clients_list.codeClient }} {{ dict_clients_list.nameClient }} </a>
+                <a href ="{% url 'dict_clients_detail' dict_clients_list.id %}"> {{ dict_clients_list.codeClient }} {{ dict_clients_list.nameClient }} </a>
 
             </li>
         {% endfor %}
