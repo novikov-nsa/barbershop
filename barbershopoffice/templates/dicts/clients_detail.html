@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+<p><a href = "{% url 'dict_clients_list' %}">В список клиентов</a></p>
+<a>Добавить</a>
+<a>Редактировать</a>
+<h1>Карточка клиента</h1>
 <p>Код клиента          {{ client.codeClient }}</p>
 <p>Наименование клиента {{ client.nameClient }}</p>
 </body>
