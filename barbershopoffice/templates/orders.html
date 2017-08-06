@@ -1,5 +1,7 @@
+{% extends "index.html" %}
+{% block content2 %}
 <h1>Заказы</h1>
-<a href = "{% url 'main_app' %}">На главную страницу</a>
+<!-- <a href = "{% url 'main_app' %}">На главную страницу</a> -->
 <ul>
         {% for orders in latest_order %}
             <li>
@@ -10,3 +12,4 @@
         {% endfor %}
 
 </ul>
+{% endblock %}
