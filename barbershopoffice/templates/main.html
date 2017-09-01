@@ -2,27 +2,55 @@
 {% block content2 %}
 
 <!-- <a href = "{% url 'main_app' %}">На главную страницу</a> -->
-<div class="panel panel-default">
+<div class="container-fuid">
+<div class="row">
+    <div class="col-lg-10">
+        <div class="panel panel-default">
   <!-- Содержание панели по умолчанию -->
-  <div class="panel-heading">Заказы</div>
+            <div class="panel-heading">Заказы (последние 5)</div>
 
   <!-- Таблица -->
-  <table class="table">
-      <thead>
-      <tr>
-        <th>Номер заказа</th>
-        <th>Клиент</th>
-      </tr>
-      </thead>
-      <tbody>
-      {% for orders in latest_order %}
-        <tr>
-            <td>№ {{ orders.numberOrder }} от {{orders.dateOrder }}</td>
-            <td>{{ orders.client.nameClient }}</td>
-        </tr>
-      {% endfor %}
-      </tbody>
+             <table class="table">
+                <thead>
+                     <tr>
+                         <th>Номер заказа</th>
+                         <th>Клиент</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for orders in latest_order %}
+                    <tr>
+                        <td>№ {{ orders.numberOrder }} от {{orders.dateOrder }}</td>
+                        <td>{{ orders.client.nameClient }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
 
-  </table>
+             </table>
+        </div>
+    </div>
+    <div class="col-lg-2">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Действия</div>
+
+            <div align="justify" class="btn-group-vertical" role="group" aria-label="Действия">
+
+                <button type="button" class="btn btn-primary btn-sm btn-block">Новый заказ</button>
+                <p></p>
+
+
+
+                <button type="button" class="btn btn-outline-secondary">Отменить заказ</button>
+
+            </div>
+
+
+        </div>
+    </div>
 </div>
+</div>
+
+
+
 {% endblock %}

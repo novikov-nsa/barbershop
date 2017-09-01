@@ -33,6 +33,6 @@ def dict_clients_detail(request, client_id):
     return render(request,'dicts/clients_detail.html', {'client': client})
 
 def orders(request):
-    latest_order = Orders.objects.order_by('-numberOrder')[:5]
+    latest_order = Orders.objects.order_by('-numberOrder')
     context = {'latest_order': latest_order}
     return render(request, 'orders.html', context)

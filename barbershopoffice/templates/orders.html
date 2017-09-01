@@ -1,15 +1,39 @@
 {% extends "index.html" %}
 {% block content2 %}
-<h1>Заказы</h1>
-<!-- <a href = "{% url 'main_app' %}">На главную страницу</a> -->
-<ul>
-        {% for orders in latest_order %}
-            <li>
 
-                    Заказ № {{ orders.numberOrder }} от {{orders.dateOrder }}, клиент: {{ orders.client.nameClient }}
+<div class="panel panel-default">
+  <!-- Содержание панели по умолчанию -->
+  <div class="panel-heading">Заказы (все)</div>
 
-            </li>
-        {% endfor %}
+  <!-- Таблица -->
+  <table class="table">
+      <thead>
+      <tr>
+        <th>Номер заказа</th>
+        <th>Клиент</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for orders in latest_order %}
+        <tr>
+            <td>№ {{ orders.numberOrder }} от {{orders.dateOrder }}</td>
+            <td>{{ orders.client.nameClient }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
 
-</ul>
+  </table>
+</div>
+
+
+<script>
+
+    var a = document.getElementById('menu_orders');
+    a.setAttribute('class','active')
+    var b = document.getElementById('menu_dict_services');
+    b.setAttribute('class','')
+    var c = document.getElementById('menu_dict_clients');
+    c.setAttribute('class','')
+
+</script>
 {% endblock %}

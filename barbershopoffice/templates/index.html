@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="container">
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
+  <div class="container-fuid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -17,7 +17,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li id="menu_orders" class="active"><a href="{% url 'orders' %}">Заказы <span class="sr-only">(current)</span></a></li>
+        <li id="menu_orders"><a href="{% url 'orders' %}">Заказы <span class="sr-only">(current)</span></a></li>
         <li id="menu_dict_services"><a href="{% url 'dict_services_list' %}">Услуги <span class="sr-only"></span></a></li>
         <li id="menu_dict_clients"><a href="{% url 'dict_clients_list' %}">Клиенты <span class="sr-only"></span></a></li>
 
@@ -37,3 +37,4 @@
 {% block content2 %}{% endblock %}
 
 {% endblock %}
+</div>
