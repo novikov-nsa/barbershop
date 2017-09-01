@@ -1,7 +1,9 @@
 {% extends "index.html" %}
 {% block content2 %}
+
 <h1>Услуги</h1>
 <!-- <a href = "{% url 'dicts' %}">Назад в справочники</a> -->
+
 <ul>
         {% for dict_services_list in latest_dicts_services %}
             <li>
@@ -12,4 +14,14 @@
         {% endfor %}
 
 </ul>
+<script>
+
+    var a = document.getElementById('menu_orders');
+    a.setAttribute('class','')
+    var b = document.getElementById('menu_dict_services');
+    b.setAttribute('class','active')
+    var c = document.getElementById('menu_dict_clients');
+    c.setAttribute('class','')
+
+</script>
 {% endblock %}

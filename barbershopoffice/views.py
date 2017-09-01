@@ -8,7 +8,9 @@ from .models import Orders, OrdersDetail, DictServices, DictClients
 
 # Create your views here.
 def main_app(request):
-    return render(request, 'index.html')
+    latest_order = Orders.objects.order_by('-numberOrder')[:5]
+    context = {'latest_order': latest_order}
+    return render(request, 'main.html', context)
 
 def dicts(request):
     return render(request, 'dicts/index.html')
