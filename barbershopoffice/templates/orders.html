@@ -20,9 +20,11 @@
                 <tbody>
                     {% for orders in latest_order %}
                     <tr>
-                        <td>{{ orders.client.nameClient }}</td>
-                        <td>{{ orders.numberOrder }}</td>
-                        <td>{{ orders.dateOrder }}</td>
+
+                        <td><a href ="{% url 'order_detail' orders.id %}">{{ orders.client.nameClient }}</a></td>
+                        <td><a href ="{% url 'order_detail' orders.id %}">{{ orders.numberOrder }}</a></td>
+                        <td><a href ="{% url 'order_detail' orders.id %}">{{ orders.dateOrder }}</a></td>
+
 
                     </tr>
                 {% endfor %}

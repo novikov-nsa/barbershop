@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Заказ {{ order.numberOrder }} от {{ order.dateOrder }}</h3>
+  </div>
+  <div class="panel-body">
+      <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Наименование клиента</span>
+          <input type="text" class="form-control" placeholder="Введите наименование клиента" aria-describedby="basic-addon1">
+      </div>
+  </div>
+</div>
+{% endblock %}

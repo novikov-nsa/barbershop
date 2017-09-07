@@ -21,7 +21,7 @@ def dict_services_list(request):
     return render(request, 'dicts/services.html', context)
 
 def dict_clients_list(request):
-    latest_dicts_clients = DictClients.objects.order_by('-codeClient')[:5]
+    latest_dicts_clients = DictClients.objects.order_by('-codeClient')
     context = {'latest_dicts_clients': latest_dicts_clients}
     return render(request, 'dicts/clients.html', context)
 
@@ -36,3 +36,10 @@ def orders(request):
     latest_order = Orders.objects.order_by('-numberOrder')
     context = {'latest_order': latest_order}
     return render(request, 'orders.html', context)
+
+def order_detail(request, order_id):
+    try:
+        order = Orders.objects.get(pk=order_id)
+    except Orders.DoesNotExist:
+        raise Http404("Запись заказа не найдена")
+    return render(request, 'order_detail_edit.html', {'order': order})
