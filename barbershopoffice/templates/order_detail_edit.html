@@ -7,8 +7,11 @@
   <div class="panel-body">
       <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">Наименование клиента</span>
-          <input type="text" class="form-control" placeholder="Введите наименование клиента" aria-describedby="basic-addon1">
+          <input id="order_client_name" type="text" class="form-control"
+                 placeholder="Введите наименование клиента" aria-describedby="basic-addon1"
+          value="{{ order.client.nameClient }}">
       </div>
+
   </div>
 </div>
 {% endblock %}

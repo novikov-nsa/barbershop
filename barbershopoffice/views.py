@@ -40,6 +40,8 @@ def orders(request):
 def order_detail(request, order_id):
     try:
         order = Orders.objects.get(pk=order_id)
+     #   client_name = DictClients.objects.get(pk=order['client'])
+
     except Orders.DoesNotExist:
         raise Http404("Запись заказа не найдена")
-    return render(request, 'order_detail_edit.html', {'order': order})
+    return render(request, 'order_detail_edit.html', {'order': order})#, 'client_name': client_name})
